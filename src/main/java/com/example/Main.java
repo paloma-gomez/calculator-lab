@@ -58,17 +58,163 @@ public class Main {
                             System.out.println("Invalid choice.");
                     }
                     break;
-                case 2: // Subtraction
-                    // Similar submenu for Sub class
+                case 2: // Sub
+                    System.out.println("Sub Menu:");
+                    System.out.println("1. Restar dos números (double)");
+                    System.out.println("2. Restar dos números (int)");
+                    System.out.println("3. Restar tres números (double)");
+                    System.out.println("4. Restar y acumular (M-)");
+                    System.out.print("Elige una opción: ");
+                    int subOption = scanner.nextInt();
+                    switch (subOption) {
+                        case 1:
+                            System.out.print("Introduce el primer número (double): ");
+                            double d1 = scanner.nextDouble();
+                            System.out.print("Introduce el segundo número (double): ");
+                            double d2 = scanner.nextDouble();
+                            System.out.println("Resultado: " + Sub.sub(d1, d2));
+                            break;
+                        case 2:
+                            System.out.print("Introduce el primer número (int): ");
+                            int i1 = scanner.nextInt();
+                            System.out.print("Introduce el segundo número (int): ");
+                            int i2 = scanner.nextInt();
+                            System.out.println("Resultado: " + Sub.sub(i1, i2));
+                            break;
+                        case 3:
+                            System.out.print("Introduce el primer número (double): ");
+                            double d3 = scanner.nextDouble();
+                            System.out.print("Introduce el segundo número (double): ");
+                            double d4 = scanner.nextDouble();
+                            System.out.print("Introduce el tercer número (double): ");
+                            double d5 = scanner.nextDouble();
+                            System.out.println("Resultado: " + Sub.sub3(d3, d4, d5));
+                            break;
+                        case 4:
+                            System.out.print("Introduce el número a restar del acumulado: ");
+                            double acc = scanner.nextDouble();
+                            System.out.println("Acumulado actual: " + Sub.accumulatedSubtraction(acc));
+                            break;
+                        default:
+                            System.out.println("Opción no válida.");
+                    }
                     break;
                 case 3: // Product
-                    // Similar submenu for Product class
+                    System.out.println("Product Menu:");
+                    System.out.println("1. Multiplicar dos números (double)");
+                    System.out.println("2. Multiplicar dos números (int)");
+                    System.out.println("3. Multiplicar tres números (double)");
+                    System.out.println("4. Potencia (base double, exponente int)");
+                    System.out.print("Elige una opción: ");
+                    int prodOption = scanner.nextInt();
+                    switch (prodOption) {
+                        case 1:
+                            System.out.print("Introduce el primer número (double): ");
+                            double pd1 = scanner.nextDouble();
+                            System.out.print("Introduce el segundo número (double): ");
+                            double pd2 = scanner.nextDouble();
+                            System.out.println("Resultado: " + Product.product(pd1, pd2));
+                            break;
+                        case 2:
+                            System.out.print("Introduce el primer número (int): ");
+                            int pi1 = scanner.nextInt();
+                            System.out.print("Introduce el segundo número (int): ");
+                            int pi2 = scanner.nextInt();
+                            System.out.println("Resultado: " + Product.product(pi1, pi2));
+                            break;
+                        case 3:
+                            System.out.print("Introduce el primer número (double): ");
+                            double pd3 = scanner.nextDouble();
+                            System.out.print("Introduce el segundo número (double): ");
+                            double pd4 = scanner.nextDouble();
+                            System.out.print("Introduce el tercer número (double): ");
+                            double pd5 = scanner.nextDouble();
+                            System.out.println("Resultado: " + Product.product3(pd3, pd4, pd5));
+                            break;
+                        case 4:
+                            System.out.print("Introduce la base (double): ");
+                            double base = scanner.nextDouble();
+                            System.out.print("Introduce el exponente (int): ");
+                            int exp = scanner.nextInt();
+                            try {
+                                System.out.println("Resultado: " + Product.power(base, exp));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                            break;
+                        default:
+                            System.out.println("Opción no válida.");
+                    }
                     break;
                 case 4: // Division
-                    // Similar submenu for Division class
+                    System.out.println("Division Menu:");
+                    System.out.println("1. Dividir dos números (double)");
+                    System.out.println("2. Dividir dos números (int)");
+                    System.out.println("3. Recíproco de un número (double)");
+                    System.out.print("Elige una opción: ");
+                    int divOption = scanner.nextInt();
+                    switch (divOption) {
+                        case 1:
+                            System.out.print("Introduce el dividendo (double): ");
+                            double dd1 = scanner.nextDouble();
+                            System.out.print("Introduce el divisor (double): ");
+                            double dd2 = scanner.nextDouble();
+                            try {
+                                System.out.println("Resultado: " + Division.division(dd1, dd2));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                            break;
+                        case 2:
+                            System.out.print("Introduce el dividendo (int): ");
+                            int di1 = scanner.nextInt();
+                            System.out.print("Introduce el divisor (int): ");
+                            int di2 = scanner.nextInt();
+                            try {
+                                System.out.println("Resultado: " + Division.division(di1, di2));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                            break;
+                        case 3:
+                            System.out.print("Introduce el número para el recíproco (double): ");
+                            double dr = scanner.nextDouble();
+                            try {
+                                System.out.println("Resultado: " + Division.reciprocal(dr));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                            break;
+                        default:
+                            System.out.println("Opción no válida.");
+                    }
                     break;
                 case 5: // Module
-                    // Similar submenu for Module class
+                    System.out.println("Module Menu:");
+                    System.out.println("1. Módulo de dos números (int)");
+                    System.out.println("2. Valor absoluto (double)");
+                    System.out.print("Elige una opción: ");
+                    int modOption = scanner.nextInt();
+                    switch (modOption) {
+                        case 1:
+                            System.out.print("Introduce el primer número (int): ");
+                            int m1 = scanner.nextInt();
+                            System.out.print("Introduce el segundo número (int): ");
+                            int m2 = scanner.nextInt();
+                            try {
+                                System.out.println("Resultado: " + Module.module(m1, m2));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                            break;
+                        case 2:
+                            System.out.print("Introduce el número (double): ");
+                            double abs = scanner.nextDouble();
+                            System.out.println("Resultado: " + Module.absoluteValue(abs));
+                            break;
+                        default:
+                            System.out.println("Opción no válida.");
+                    }
                     break;
                 case 6: // Unit Converter
                     System.out.println("Unit Converter Menu:");
@@ -102,7 +248,7 @@ public class Main {
                             System.out.println("Invalid choice.");
                     }
                     break;
-                case 7:
+                case 7: //Exit Calculator
                     running = false;
                     System.out.println("Exiting calculator.");
                     break;
